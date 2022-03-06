@@ -12,7 +12,13 @@ module App
     config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
-    #
+
+    # Twitter access configuration
+    config.twitter_consumer_key = ENV['TWITTER_CONSUMER_KEY']
+    config.twitter_consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
+    config.twitter_access_token = ENV['TWITTER_ACCESS_TOKEN']
+    config.twitter_access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
+
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
