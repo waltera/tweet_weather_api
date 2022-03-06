@@ -4,7 +4,13 @@ class TweetService
   attr_accessor :city_id
 
   def perform!
-    client.update("I'm tweeting with @gem!")
+    result = WalterWeather.weather_from_city(city_id)
+    tweet_weather = TweetWeather.new(result:)
+    tweet_weather.build_text
+
+    client.update(tweet_weather.text)
+
+    true
   end
 
   def client

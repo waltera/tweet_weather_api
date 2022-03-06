@@ -46,6 +46,7 @@ group :development, :test do
   gem "dotenv-rails"
 
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'rspec-mocks'
 end
 
 group :development do
@@ -53,3 +54,6 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  gem "webmock"
+end
