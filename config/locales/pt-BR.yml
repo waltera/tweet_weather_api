@@ -1,0 +1,27 @@
+pt-BR:
+  activemodel:
+    tweet_weather:
+      weather_text: "%{temp} e %{description} em %{city_name} em %{date}."
+      forecast_raw: "%{temp} em %{date}"
+      forecast_text: "Média para os próximos dias: %{text}."
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d/%m"
+  number:
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: °C
+          million: °C
+          quadrillion: °C
+          thousand: °C
+          trillion: °C
+          unit: °C
+  support:
+    array:
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
