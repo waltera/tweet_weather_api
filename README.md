@@ -1,24 +1,51 @@
-# README
+# Tweet Weather API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Expose API with single endpoint to create tweets with weather information
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+### Set environment variables
+Use `.env` to set variables:
 
-* System dependencies
+    # Tweeter credentials
+    TWITTER_CONSUMER_KEY=YOUR_TWITTER_CONSUMER_KEY
+    TWITTER_CONSUMER_SECRET=YOUR_TWITTER_CONSUMER_SECRET
+    TWITTER_ACCESS_TOKEN=YOUR_TWITTER_ACCESS_TOKEN
+    TWITTER_ACCESS_TOKEN_SECRET=YOUR_TWITTER_ACCESS_TOKEN_SECRET
 
-* Configuration
+    # Open Weather API Token
+    OPEN_WEATHER_API_KEY=YOUR_OPEN_WEATHER_API_KEY
 
-* Database creation
+### Without Docker
 
-* Database initialization
+First install Ruby 3.1.1
 
-* How to run the test suite
+Install gem dependencies:
 
-* Services (job queues, cache servers, search engines, etc.)
+    $ bundle install
 
-* Deployment instructions
+Run puma:
 
-* ...
+    $ rails s
+
+### With Docker
+
+Build image:
+
+    $ docker-compose build
+
+Install gem dependencies:
+
+    $ docker-compose run web bundle install
+
+Run web container:
+
+    $ docker-compose up
+
+## Endpoint
+
+Exemplo:
+
+    $ curl -d "city_id=3469058" -X POST http://localhost:3000/tweet_weather
+
+Get `city_id` from [Geocoding API](https://openweathermap.org/api/geocoding-api) manually.
