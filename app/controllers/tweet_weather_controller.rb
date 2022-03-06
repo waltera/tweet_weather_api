@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TweetWeatherController < ApplicationController
   def create
     service = TweetService.new(tweet_params)

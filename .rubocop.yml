@@ -1,0 +1,41 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_gem:
+  relaxed-rubocop: .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.1.1
+  Exclude:
+    - 'config/puma.rb'
+    - 'config/environments/*.rb'
+    - 'spec/spec_helper.rb'
+    - 'bin/*'
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/ClassVars:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
+RSpec/StubbedMock:
+  Enabled: false
