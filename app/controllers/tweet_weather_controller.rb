@@ -2,9 +2,13 @@
 
 class TweetWeatherController < ApplicationController
   def create
-    service = TweetService.new(tweet_params)
-    service.perform!
-    head :created
+    begin
+      service = TweetService.new(tweet_params)
+      service.perform!
+      head :created
+    rescue
+      head :unprocessable_entity
+    end
   end
 
   private
