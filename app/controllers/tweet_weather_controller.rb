@@ -2,8 +2,9 @@
 
 class TweetWeatherController < ApplicationController
   def create
+    service = TweetService.new(tweet_params)
+
     begin
-      service = TweetService.new(tweet_params)
       service.perform!
       head :created
     rescue

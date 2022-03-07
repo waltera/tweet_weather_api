@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "Tweet Weather Management", type: :request do
   describe "#post" do
-    context 'with success' do
+    context "with success" do
       let!(:params) { { city_id: "3469058" } }
       let!(:expected_text) { "10°C e nublado em Brasília em 01/01. Média para os próximos dias: 10°C em 01/01." }
       let!(:weather) do
@@ -28,7 +28,7 @@ RSpec.describe "Tweet Weather Management", type: :request do
       end
     end
 
-    context 'with fail' do
+    context "with fail" do
       let!(:service_dbl) { instance_double("TweetService") }
 
       it "must return unprocessabled entity code" do
